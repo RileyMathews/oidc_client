@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    oidc_client (0.0.1.pre)
+    oidc_client (0.0.2.pre)
       rails (~> 6.0.1)
 
 GEM
