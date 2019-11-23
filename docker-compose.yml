@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./.docker/dev/Dockerfile
+    container_name: oidc_client
+    image: oidc_client:0.0.1
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/app:delegated
+      - ./.devcontainer/settings.vscode.json:/root/.vscode-remote/data/Machine/settings.json:delegated
+      - "${HOME}/.gitconfig:/root/.gitconfig"
+      - bundle:/bundle
+    ports:
+      - "3000:3000"
+
+volumes:
+  bundle:
